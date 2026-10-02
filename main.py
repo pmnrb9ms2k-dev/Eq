@@ -34,8 +34,8 @@ WS_URL = "wss://ws-api.wolfx.jp/cenc_eew"
 PUSH_LEVEL = "critical"
 
 # 翠屏区中心坐标（宜宾市翠屏区）
-CUI_PING_LAT = 28.77
-CUI_PING_LON = 104.62
+CUI_PING_LAT = 28.79
+CUI_PING_LON = 104.61
 
 # 去重缓存大小
 RECENT_PUSH_LIMIT = 200
@@ -153,7 +153,7 @@ async def bark_fetch(session, key, title, subtitle, body, level):
     url = (
         f"https://api.day.app/{key}/"
         f"{encoded_title}/{encoded_subtitle}/{encoded_body}"
-        f"?level={level}&group={encoded_group}&sound=alarm"
+        f"?level={level}&group={encoded_group}&sound=音频截取_爱给网_aigei_com"
     )
 
     async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as response:

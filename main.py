@@ -16,9 +16,8 @@ import websockets
 from urllib.parse import quote
 
 # ==================== 配置区域 ====================
-# Bark 设备码
 BARK_KEYS = [
-    "009e8f7408c31a98d13d0da57f4e6c0313becbcc1d586c2d8ff292cc80a3595c",
+    "rcuMeBUdF5XA6852tt9ZcX",
 ]
 
 # 最小震级，低于此值不推送

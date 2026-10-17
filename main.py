@@ -141,18 +141,17 @@ def should_push(data):
     _, intensity, _, _, _ = info
     return intensity >= MIN_LOCAL_INTENSITY
 
-
 async def bark_fetch(session, key, title, subtitle, body, level):
-    """调用 Bark API 三段式推送：标题 / 副标题 / 正文"""
     encoded_title = quote(title)
     encoded_subtitle = quote(subtitle)
     encoded_body = quote(body)
     encoded_group = quote("地震预警")
+    encoded_sound = quote("音频截取_爱给网_aigei_com")
 
     url = (
         f"https://api.day.app/{key}/"
         f"{encoded_title}/{encoded_subtitle}/{encoded_body}"
-        f"?level={level}&group={encoded_group}&sound=音频截取_爱给网_aigei_com"
+        f"?level={level}&group={encoded_group}&sound={encoded_sound}&call=1"
     )
 
     async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as response:
